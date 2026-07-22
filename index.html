@@ -8,43 +8,42 @@
   :root{--red:#D64045;--blue:#2C6FCE;--green:#1A8A4A;--orange:#E07B39;--purple:#7B4FBF;--bg:#F8F9FB;--card:#FFF;--text:#1A1A2E;--muted:#6B7280;--border:#E5E7EB;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 6px rgba(0,0,0,.05),0 2px 4px rgba(0,0,0,.04)}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  .header{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%);color:#fff;padding:24px 0 18px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+  .header{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%);color:#fff;padding:22px 0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15)}
   .header-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .header h1{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+  .header h1{font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
   .header h1 span{color:#F59E0B}
-  .header .date{font-size:.84rem;color:#94A3B8}
-  .header .badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 11px;font-size:.72rem;color:#CBD5E1;margin:1px}
+  .header .date{font-size:.82rem;color:#94A3B8}
+  .header .badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:2px 10px;font-size:.7rem;color:#CBD5E1;margin:1px}
   .container{max-width:1100px;margin:0 auto;padding:16px 24px}
-  .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin-bottom:20px}
-  .dash-card{background:var(--card);border-radius:10px;padding:11px 13px;box-shadow:var(--shadow);border:1px solid var(--border)}
-  .dash-card .label{font-size:.66rem;letter-spacing:.03em;color:var(--muted);margin-bottom:2px}
-  .dash-card .value{font-size:1.04rem;font-weight:700}
-  .dash-card .change{font-size:.7rem;margin-left:3px}
+  .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:18px}
+  .dash-card{background:var(--card);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow);border:1px solid var(--border)}
+  .dash-card .label{font-size:.64rem;letter-spacing:.03em;color:var(--muted);margin-bottom:2px}
+  .dash-card .value{font-size:1rem;font-weight:700}
+  .dash-card .change{font-size:.68rem;margin-left:3px}
   .up{color:#D64045}.down{color:#1A8A4A}
-  .section{margin-bottom:24px}
-  .section-title{display:flex;align-items:center;gap:9px;font-size:1.08rem;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border)}
+  .section{margin-bottom:22px}
+  .section-title{display:flex;align-items:center;gap:9px;font-size:1.05rem;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border)}
   .section-title .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
   .section.red .dot{background:var(--red)}.section.red .section-title{border-color:#FECACA}
   .section.blue .dot{background:var(--blue)}.section.blue .section-title{border-color:#BFDBFE}
   .section.green .dot{background:var(--green)}.section.green .section-title{border-color:#BBF7D0}
   .section.purple .dot{background:var(--purple)}.section.purple .section-title{border-color:#DDD6FE}
   .section.orange .dot{background:var(--orange)}.section.orange .section-title{border-color:#FED7AA}
-  .news-list{display:flex;flex-direction:column;gap:7px}
-  .news-item{background:var(--card);border-radius:8px;padding:12px 16px;box-shadow:var(--shadow);border:1px solid var(--border);border-left:4px solid transparent;transition:box-shadow .15s}
+  .news-list{display:flex;flex-direction:column;gap:6px}
+  .news-item{background:var(--card);border-radius:8px;padding:11px 16px;box-shadow:var(--shadow);border:1px solid var(--border);border-left:4px solid transparent;transition:box-shadow .15s}
   .news-item:hover{box-shadow:var(--shadow-md)}
   .section.red .news-item{border-left-color:var(--red)}.section.blue .news-item{border-left-color:var(--blue)}
   .section.green .news-item{border-left-color:var(--green)}.section.purple .news-item{border-left-color:var(--purple)}
   .section.orange .news-item{border-left-color:var(--orange)}
-  .news-item .num{display:inline-block;font-size:.64rem;font-weight:700;color:#fff;background:var(--muted);border-radius:3px;padding:1px 6px;margin-right:6px;vertical-align:middle}
-  .news-item h3{display:inline;font-size:.88rem;font-weight:700;vertical-align:middle}
-  .news-item p{margin-top:5px;font-size:.83rem;color:#374151;line-height:1.65}
-  .news-item .source{display:inline-block;margin-top:5px;font-size:.69rem;color:var(--muted);background:#F3F4F6;border-radius:4px;padding:2px 7px}
-  .summary-box{background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);border:1px solid #FCD34D;border-radius:10px;padding:15px 20px;margin-bottom:24px}
-  .summary-box h3{font-size:.78rem;letter-spacing:.05em;color:#92400E;margin-bottom:6px}
-  .summary-box p{font-size:.84rem;color:#78350F;line-height:1.75}
-  .footer{text-align:center;padding:16px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);margin-top:8px}
-  @media(max-width:768px){.header h1{font-size:1.1rem}.dashboard{grid-template-columns:repeat(2,1fr)}.news-item{padding:10px 12px}}
-  @media print{.header{position:static}.news-item{break-inside:avoid}}
+  .news-item .num{display:inline-block;font-size:.62rem;font-weight:700;color:#fff;background:var(--muted);border-radius:3px;padding:1px 5px;margin-right:5px;vertical-align:middle}
+  .news-item h3{display:inline;font-size:.86rem;font-weight:700;vertical-align:middle}
+  .news-item p{margin-top:4px;font-size:.82rem;color:#374151;line-height:1.6}
+  .news-item .source{display:inline-block;margin-top:5px;font-size:.68rem;color:var(--muted);background:#F3F4F6;border-radius:4px;padding:2px 6px}
+  .summary-box{background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);border:1px solid #FCD34D;border-radius:10px;padding:14px 18px;margin-bottom:22px}
+  .summary-box h3{font-size:.76rem;letter-spacing:.05em;color:#92400E;margin-bottom:6px}
+  .summary-box p{font-size:.82rem;color:#78350F;line-height:1.7}
+  .footer{text-align:center;padding:14px;font-size:.68rem;color:var(--muted);border-top:1px solid var(--border);margin-top:8px}
+  @media(max-width:768px){.header h1{font-size:1.1rem}.dashboard{grid-template-columns:repeat(2,1fr)}.news-item{padding:9px 11px}}
 </style>
 </head>
 <body>
@@ -53,7 +52,7 @@
   <div class="header-inner">
     <div>
       <h1>📰 新闻<span>驿站</span></h1>
-      <div style="font-size:.7rem;color:#94A3B8;margin-top:2px;">全球重大新闻 · 中美视角 · 每日推送</div>
+      <div style="font-size:.68rem;color:#94A3B8;margin-top:1px;">全球重大新闻 · 中美视角 · 每日推送</div>
     </div>
     <div style="text-align:right">
       <div class="date">2026年7月22日 · 星期三</div>
@@ -74,19 +73,19 @@
     <div class="dash-card"><div class="label">🇨🇳 上证综指</div><div class="value">3,864 <span class="change up">▲ 1.8%</span></div></div>
     <div class="dash-card"><div class="label">🇨🇳 创业板指</div><div class="value">3,686 <span class="change up">▲ 7.1%</span></div></div>
     <div class="dash-card"><div class="label">🇭🇰 恒生指数</div><div class="value">25,132 <span class="change down">▼ 0.04%</span></div></div>
-    <div class="dash-card"><div class="label">🛢️ WTI原油</div><div class="value">$84.54 <span class="change up">▲ 2.1%</span></div></div>
-    <div class="dash-card"><div class="label">🪙 黄金</div><div class="value">$4,082 <span class="change up">▲ 1.7%</span></div></div>
-    <div class="dash-card"><div class="label">₿ 比特币</div><div class="value">$66,600 <span class="change up">▲ 1.6%</span></div></div>
+    <div class="dash-card"><div class="label">🛢️ WTI原油</div><div class="value">$85.03 <span class="change up">▲ 2.5%</span></div></div>
+    <div class="dash-card"><div class="label">🪙 黄金</div><div class="value">$4,084 <span class="change up">▲ 1.8%</span></div></div>
+    <div class="dash-card"><div class="label">₿ 比特币</div><div class="value">$66,956 <span class="change up">▲ 3.0%</span></div></div>
   </div>
 
   <div class="summary-box">
     <h3>💡 今日五大主线</h3>
     <p>
-      <strong>① 五角大楼指控中俄援助伊朗：</strong>美防长赫格塞思国会作证称中俄"以不同程度"支持伊朗作战，但拒绝公开证据。美伊战争已耗费375亿美元，五角大楼追加申请670亿。中国大举削减伊朗石油进口40%。伊朗警告若核设施遭袭将全面升级报复。<br>
-      <strong>② A股史诗级深V反攻：创业板+7.05%创年内最大单日涨幅！</strong>科创50暴涨10.73%，半导体板块涨超10%。国家队600亿+央企密集增持+险资百亿入场+560家公司回购1300亿，政策底资金底共振。八大券商集体研判：牛市基础未逆转。<br>
-      <strong>③ 美股芯片股大反攻：费城半导体+5.2%，存储芯片指数暴涨11.2%。</strong>台积电拟明年涨价10%，美光+12%、AMD/Intel+8%。标普三连跌后反弹0.9%，87%已公布公司超预期。今夜Alphabet和特斯拉财报——AI投资回报终极考验。<br>
-      <strong>④ Alphabet和特斯拉今夜放榜：</strong>Alphabet预期EPS $2.87、收入$1170亿（+21%），AI资本开支$1800-1900亿引关注。特斯拉预期EPS $0.52、收入$260亿，Robotaxi和Optimus更新为焦点。Google秘密Frozen v2芯片推动股价盘前涨3%。<br>
-      <strong>⑤ "万物齐涨"：</strong>原油+2%（布伦特$91）、黄金+1.7%（$4082）、比特币冲上$66000六周新高、白银+4.8%。避险资产与风险资产罕见同步大涨。
+      <strong>① 特朗普威胁打击伊朗"镐山"地下核设施：</strong>美伊战争已耗费$375亿，五角大楼追加$670亿。美防长公开指控中俄"以不同程度"援伊朗。中国大举削减伊朗石油进口40%。巴林拦截伊朗对美空军基地袭击。两艘沙特油轮红海折返。<br>
+      <strong>② A股史诗级深V：创业板+7.05%创年内最大单日涨幅，科创50+10.73%。</strong>"国家队"600亿+险资百亿+560家上市公司回购1300亿+ETF两周3042亿净流入。八大券商：牛市基础未逆转。花旗上调中国超配。<br>
+      <strong>③ 美股芯片大反攻：费城半导体+5.2%，存储芯片指数+11.2%。</strong>美光+12%、Intel+8.6%。台积电拟涨价10%引爆板块。Q2财报季88%公司超预期。今夜Alphabet和特斯拉收盘后放榜——AI千亿豪赌的回报大考。<br>
+      <strong>④ "万物齐涨"：</strong>股市、原油（WTI$85/布伦特$91）、黄金（$4084）、比特币（$66956六周新高）、白银（+4.8%）罕见同步大涨。市场透过地缘风险聚焦强劲盈利。<br>
+      <strong>⑤ Alphabet/Tesla今夜财报：</strong>Alphabet预期EPS$2.88（+25%）、AI资本开支$1800-1900亿（翻倍）。Tesla预期EPS$0.52（+30%），Robotaxi时间表万众瞩目。Intel周四接棒。
     </p>
   </div>
 
@@ -96,39 +95,39 @@
     <div class="news-list">
 
       <div class="news-item">
-        <span class="num">1</span><h3>五角大楼指控中俄"援助伊朗"，美伊战争已耗费375亿美元</h3>
-        <p>美防长赫格塞思7月22日在参议院作证时公开指控中国和俄罗斯"以不同程度"支持伊朗对美作战，但以涉密为由拒绝披露具体支持方式和规模。参联会主席凯恩上将同样拒绝在公开听证中讨论。赫格塞思透露美伊开战约五个月来已耗费375亿美元，五角大楼正申请追加670亿美元补充拨款。他同时宣称伊朗军力处于"十年来最弱"状态，数千枚弹道导弹已被摧毁。</p>
-        <span class="source">📎 NEWSru.co.il / Anadolu Ajansı / Newsis</span>
+        <span class="num">1</span><h3>特朗普威胁打击伊朗"镐山"地下核设施，称"可能很快"发动"非常强大"的攻击</h3>
+        <p>特朗普7月22日表示美国"可能很快"打击伊朗伊斯法罕省"镐山"地下核设施，警告攻击将"非常强大"。他声称伊朗"渴望会面"但美方在伊朗准备好实质性谈判前无兴趣。此前美军已连续十夜空袭伊朗，爆炸波及布什尔核电站附近。伊朗军方警告若核设施遭袭将全面扩大报复。联合国秘书长古特雷斯深表关切。</p>
+        <span class="source">📎 新华社 / 光明网 / AA.com.tr</span>
       </div>
 
       <div class="news-item">
-        <span class="num">2</span><h3>中国削减伊朗石油进口40%，美财长称为制裁"茶壶"炼厂成效</h3>
-        <p>美财长贝森特7月22日宣布中国近月已削减约40%的伊朗原油采购量,主因美方制裁中国"茶壶"民营炼厂。此举大幅压缩了伊朗石油收入来源。此前中国一直是伊朗最大石油买家。分析认为此举既是对美方施压的回应，也体现了中美经贸关系在经历马德里磋商后的微妙变化。伊朗外交部确认已收到多方调解方案，十一天停火方案仍在讨论中。</p>
-        <span class="source">📎 Investing.com / China.org.cn</span>
+        <span class="num">2</span><h3>美防长公开指控中俄"以不同程度"援助伊朗，战争已耗费$375亿</h3>
+        <p>美防长赫格塞思在参议院作证时指控中国和俄罗斯"以不同程度、以不同方式"支持伊朗对美作战，但以涉密为由拒绝披露具体细节。参联会主席凯恩也拒绝公开讨论。赫格塞思透露开战约五个月已耗费375亿美元，五角大楼申请追加670亿。他声称伊朗军力处"十年来最弱"，数千枚弹道导弹被摧毁。特朗普据报本周或对数国加征新关税。</p>
+        <span class="source">📎 NEWSru.co.il / Anadolu Ajansı / 新华社</span>
       </div>
 
       <div class="news-item">
-        <span class="num">3</span><h3>伊朗警告：若核设施遭袭将全面扩大报复；联合国秘书长呼吁立即停火</h3>
-        <p>伊朗军方7月22日发出严厉警告：若美国攻击其核设施或敏感设施（此前特朗普威胁打击伊斯法罕附近核设施），伊朗将全面扩大对美及盟友目标的攻击范围。此前美军第十夜空袭波及布什尔核电站附近设施。联合国秘书长古特雷斯对军事升级"深表关切"，特别指出对伊朗核电站和海水淡化设施等民用基础设施的攻击令人担忧，呼吁立即重返外交轨道。</p>
-        <span class="source">📎 China.org.cn / Mehr News Agency</span>
+        <span class="num">3</span><h3>中国削减伊朗石油进口40%，巴林拦截伊朗对美空军基地袭击</h3>
+        <p>美财长贝森特宣布中国近月削减约40%伊朗原油采购，主因美方制裁中国"茶壶"民营炼厂。中国转而增加沙特、俄罗斯来源，全球原油贸易格局加速重塑。巴林声称拦截伊朗对美驻巴林空军基地的攻击。两艘沙特油轮在红海因胡塞威胁折返，胡塞宣称六艘商船24小时内掉头。哈萨克斯坦因油轮遭袭暂停黑海石油运输。</p>
+        <span class="source">📎 Investing.com / China.org.cn / 新华社中东</span>
       </div>
 
       <div class="news-item">
-        <span class="num">4</span><h3>A股"国家队"稳市进入常态化：吴清连开三场座谈会</h3>
-        <p>证监会主席吴清7月20-21日连开三场座谈会——分别面对散户投资者、上市公司和行业机构——明确"全力维护市场平稳运行"，将"持续加强市场基础制度建设，增强市场内在稳定性"。中国国新500亿+中国诚通100亿增持落地。五大险企（国寿、人保、太保、平安、新华）集体发声力挺A股，中国人寿单日净买入A股及基金超100亿元。央行新增支农支小再贷款1000亿元。</p>
+        <span class="num">4</span><h3>以色列财长称不参与美国对伊朗战争，王毅呼吁维持美伊和谈势头</h3>
+        <p>以色列财政部长表示以色列无意加入美国对伊朗的战争。此前以色列持续空袭黎巴嫩已致超4300人死亡，真主党与以色列停火协议极度脆弱。中国外长王毅在东盟外长会期间呼吁各方维持美伊和谈势头。美伊6月18日签署的和平谅解备忘录实际上已破裂，十一天停火方案尚在讨论中。伊朗外交部确认已收到多方调解方案。</p>
+        <span class="source">📎 新华社 / 俄罗斯卫星通讯社 / China.org.cn</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">5</span><h3>A股"国家队"稳市升级：吴清连开三场座谈会，证监会定调"增强市场内在稳定性"</h3>
+        <p>证监会主席吴清7月20-21日连续召开投资者、上市公司、行业机构三场座谈会，明确"全力维护市场平稳运行"、"持续加强市场基础制度建设，增强市场内在稳定性"。中国国新500亿+中国诚通100亿增持落地。五大险企集体入市，中国人寿单日净买入超100亿。央行新增支农支小再贷款1000亿，7月逆回购净投放约5000亿。政治局会议召开在即。</p>
         <span class="source">📎 证券时报 / 经济日报 / 东方财富</span>
       </div>
 
       <div class="news-item">
-        <span class="num">5</span><h3>A股上市公司7月回购超560家次、拟回购金额上限约1300亿元</h3>
-        <p>7月以来A股超560家次公司公布回购方案或进展，拟回购金额上限约1300亿元。仅7月21日晚单日超50家公司发布回购预案、金额超144亿元。沪市39家公司集中披露增持回购公告。博时基金5000万自购旗下基金，多家百亿私募自购4.12亿元。股票私募仓位升至83.70%创近四年新高。ETF近两周净流入3042.6亿元。广发证券：ETF大幅净流入是市场见底最直接信号。</p>
-        <span class="source">📎 21世纪经济报道 / 北京青年报 / 广州日报</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">6</span><h3>中央网信办印发IPv6实施方案，北京将制定Token经济政策</h3>
-        <p>中央网信办印发《深化IPv6技术创新和融合应用实施方案（2026-2030年）》，目标2027年IPv6活跃用户达9亿。北京市宣布将制定Token经济发展政策，力争下半年新增智能算力5万P。交通运输部提出实施8万公里交通基础设施更新和数智化改造。华为"韬定律"开辟国产算力新路径，月之暗面发布2.8万亿参数开源大模型Kimi K3。</p>
-        <span class="source">📎 新华财经 / 同花顺 / 证券时报</span>
+        <span class="num">6</span><h3>A股回购潮：560家公司拟回购1300亿，ETF两周净流入3042亿创本轮牛市第三高</h3>
+        <p>7月以来A股超560家次公司公布回购方案，拟回购金额上限约1300亿元。仅7月21日单日超50家公司发布预案、金额超144亿。博时基金5000万自购，多家百亿私募自购4.12亿。股票私募仓位升至83.70%创近四年新高。近两周ETF净流入3042.6亿元，为2024年9月牛市启动以来第三高峰。广发证券：ETF大幅净流入是市场见底最直接信号。</p>
+        <span class="source">📎 21世纪经济报道 / 广州日报 / 北京青年报</span>
       </div>
 
     </div>
@@ -140,39 +139,39 @@
     <div class="news-list">
 
       <div class="news-item">
-        <span class="num">7</span><h3>美国Q2财报季：87%标普500公司超预期，AI资本开支成焦点</h3>
-        <p>目前已公布Q2业绩的约54家标普500公司中87%超利润预期，包括通用汽车和3M的强劲表现。Q2盈利预计增长26%。但市场焦点全在科技巨头：Alphabet和特斯拉今夜收盘后公布业绩。Alphabet面临AI资本开支$1800-1900亿（同比翻倍）的回报率拷问；特斯拉需证明降价策略下的盈利韧性。分析师警告："从谁花最多转向谁赚最多"。超90%已公布公司超预期。</p>
-        <span class="source">📎 Investing.com / Edgen Tech / Upstox</span>
+        <span class="num">7</span><h3>美国Q2财报季：88%标普500公司超预期，3M+7%、通用汽车+5%双双报捷</h3>
+        <p>Q2财报季开局强劲：已公布约54家标普500公司中88%超利润预期。3M Q2业绩超预期股价暴涨7%；通用汽车营收$4803亿+调整后EPS$3.57双超预期，上调全年指引股价涨5%。标普500 Q2整体盈利预计增长26%，但市场焦点在科技巨头——Alphabet和特斯拉今夜收盘后公布业绩，AI资本开支回报率为核心命题。超90%已公布公司超预期。</p>
+        <span class="source">📎 Investing.com / Edgen Tech / Yahoo Finance</span>
       </div>
 
       <div class="news-item">
-        <span class="num">8</span><h3>花旗上调中国股票至"超配"，八大券商：牛市基础未逆转</h3>
-        <p>花旗将中国股票评级由"中性"调升至"超配"，目标价上行空间31%。高盛、渣打维持超配；摩根士丹利、瑞银看好后市。国内八大券商（中信、国泰海通、广发、申万宏源等）首席集体研判：本轮调整属牛市正常波动，调整空间已充分，反攻条件正逐步成熟。华创证券张瑜指出制造业升级趋势未变，增长驱动力正从旧经济转向新经济。招商策略判断7月政治局会议大概率再提资本市场。</p>
-        <span class="source">📎 证券时报 / 香港文汇报 / 金融投资报</span>
+        <span class="num">8</span><h3>花旗上调中国股票至"超配"，目标价上行空间31%；八大券商：牛市未逆转</h3>
+        <p>花旗将中国股票由"中性"升至"超配"，MSCI中国目标92美元（上行31%）。高盛、渣打维持超配；摩根士丹利、瑞银看好。八大券商（中信、国泰海通、广发、申万宏源等）首席集体研判：本轮调整是牛市正常波动，反攻条件逐步成熟。调整主因：外部输入性因素（油价、韩国杠杆踩踏）而非基本面。A股PE仅21.8倍，与历史牛市高点仍有距离。</p>
+        <span class="source">📎 证券时报 / 香港文汇报 / 新浪财经</span>
       </div>
 
       <div class="news-item">
-        <span class="num">9</span><h3>美债收益率升至4.63%，美元突破101，市场定价"滞胀"风险</h3>
-        <p>美伊战争推动油价持续攀升（布伦特$91+），叠加Q2强劲财报季，10年期美债收益率升至4.63%，2年期升至4.25%。美元指数DXY突破101关口。市场出现罕见的"风险资产+避险资产同步大涨"格局：美股涨、黄金涨（$4082）、比特币涨（$66000）、原油涨、白银涨（+4.8%）。分析认为市场正同时定价"强盈利"和"滞胀风险"，投资者透过地缘冲突看向财报基本面。</p>
+        <span class="num">9</span><h3>全球市场"上涨大合唱"：美元破101、美债10Y升至4.63%、风险避险资产罕见同涨</h3>
+        <p>7月21日全球市场上演罕见一幕：美股涨（标普+0.9%）、原油涨（WTI$85/+2.5%）、黄金涨（$4084/+1.8%）、比特币涨（$66956/+3%）、白银涨（+4.8%）同步上行。美元指数突破101，10年期美债收益率升至4.63%。分析认为市场正"透过地缘风险看盈利"——强劲Q2财报+AI算力实际需求增长正在压倒中东战争恐慌，但也隐含滞胀定价风险。</p>
         <span class="source">📎 FX168 / Investing.com / EBN</span>
       </div>
 
       <div class="news-item">
-        <span class="num">10</span><h3>央行新增1000亿再贷款额度+5000亿逆回购净投放，货币宽松持续</h3>
-        <p>人民银行新增支农支小再贷款额度1000亿元，支持受灾地区经营主体信贷需求。7月央行通过买断式逆回购累计净投放约5000亿元基础货币，1.4万亿买断式逆回购操作已完成。货币政策维持"适度宽松"基调，下半年还将投放8000亿元新型政策性金融工具。6月集成电路出口增121.9%，工业机器人产量增46.4%，高技术制造业增14.1%，出口增27%创历史新高。</p>
-        <span class="source">📎 新华财经 / 证券时报</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">11</span><h3>深市900家公司中报预告净利润合计2307亿+147%，科创板30家预喜</h3>
-        <p>深市900家上市公司中报预告净利润合计约2307亿元，同比增长147%。人工智能算力、有色金属、化工等行业业绩尤为亮眼。科创板32家公司中30家预喜。中国人寿预告净利润1289-1371亿元（+215-235%）。新易盛H1净利润70-80亿元（+78-103%）。AI算力、半导体、通信设备为机构调研"主战场"，中报业绩成为决定本轮反弹高度的核心变量。</p>
+        <span class="num">10</span><h3>深市900家中报净利润+147%达2307亿，科创板30家预喜，AI算力行业业绩爆发</h3>
+        <p>深市900家上市公司中报预告净利润合计约2307亿元，同比暴增147%。人工智能算力、有色金属、化工行业业绩尤为亮眼。科创板32家公司中30家预喜。中国人寿预告H1净利润1289-1371亿（+215-235%）。新易盛H1净利润70-80亿（+78-103%）。6月集成电路出口增121.9%、工业机器人产量增46.4%、高技术制造业增加值增14.1%。中报业绩成决定本轮反弹高度的核心变量。</p>
         <span class="source">📎 新华财经 / 东方财富 / 同花顺</span>
       </div>
 
       <div class="news-item">
-        <span class="num">12</span><h3>北京制定Token经济政策+下半年新增算力5万P，AI基建再提速</h3>
-        <p>北京市宣布将制定Token经济发展政策，力争下半年新增智能算力5万P。中央网信办IPv6实施方案目标2027年活跃用户达9亿。交通运输部8万公里交通基础设施数智化改造规划落地。AI算力基础设施加速扩容——华为"韬定律"开辟国产算力新路径，月之暗面Kimi K3（2.8万亿参数）开源大模型性能逼近国际前沿。中国AI产业"架构创新+政策提速"双轮驱动格局巩固。</p>
-        <span class="source">📎 新华财经早报 / 同花顺</span>
+        <span class="num">11</span><h3>华为"韬定律"开辟国产算力路径；北京Token经济政策+下半年新增算力5万P</h3>
+        <p>华为发布"韬定律"算力理论框架，提出有别于英伟达CUDA生态的国产芯片性能增长路径。北京市宣布将制定Token经济发展政策，力争下半年新增智能算力5万P。中央网信办IPv6实施方案目标2027年活跃用户达9亿。交通运输部8万公里交通基础设施数智化改造规划落地。AI算力基础设施加速扩容成为政策核心发力点。</p>
+        <span class="source">📎 新华财经 / 同花顺 / 证券时报</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">12</span><h3>央行新增1000亿再贷款+5000亿逆回购净投放，政治局会议在即政策预期升温</h3>
+        <p>人民银行新增支农支小再贷款1000亿，7月买断式逆回购累计净投放约5000亿基础货币，货币政策维持适度宽松。下半年还将投放8000亿新型政策性金融工具。招商策略研判7月政治局会议大概率部署政策加力、再提资本市场（增"稳定运行、防止大起大落"表述）。全球TOP5云厂商2026年资本开支上修至7690亿美元，国内AI算力基建同步提速。</p>
+        <span class="source">📎 新华财经早报 / 招商策略 / 金融投资报</span>
       </div>
 
     </div>
@@ -184,51 +183,45 @@
     <div class="news-list">
 
       <div class="news-item">
-        <span class="num">13</span><h3>A股史诗级深V反攻：创业板+7.05%创年内最大单日涨幅，科创50+10.73%</h3>
-        <p>7月21日A股上演惊天大逆转：上证涨1.79%至3864点，深成指涨4.81%至14264点，创业板飙涨7.05%至3686点——创2026年内最大单日涨幅，科创50暴涨10.73%。半导体板块涨超10%，CPO、存储芯片、光通信等全线反攻。两市成交2.97万亿放量2561亿元。分析认为"国家队增持+央企回购+险资入市+ETF巨量净流入"四重共振驱动反弹。</p>
-        <span class="source">📎 星岛日报 / 证券时报 / 东方财富</span>
+        <span class="num">13</span><h3>A股深V反攻：创业板+7.05%年内最大涨幅，科创50+10.73%，半导体涨超10%</h3>
+        <p>7月21日A股惊天逆转：上证涨1.79%至3864点，深成指涨4.81%，创业板飙涨7.05%创2026年内最大单日涨幅，科创50暴涨10.73%。半导体板块涨超10%，CPO、存储芯片、光通信全线反攻，中芯国际、寒武纪涨超10%，兆易创新、北方华创等多股涨停。两市成交2.97万亿放量2561亿，超3100只个股上涨。"国家队增持+央企回购+险资入市+ETF巨量净流入"四重共振。</p>
+        <span class="source">📎 星岛日报 / 中国青年报 / 东方财富</span>
       </div>
 
       <div class="news-item">
-        <span class="num">14</span><h3>美股三连跌后强势反弹：纳指+1.3%，费城半导体+5.2%，存储芯片+11.2%</h3>
-        <p>7月21日美股全面反攻：标普500涨0.89%至7509点（三连跌后首涨），纳指涨1.29%至25837点，纳指100涨1.9%创三周最佳。费城半导体指数暴涨5.2%——美光+12%、AMD和英特尔各+8%以上。存储芯片指数飙升11.2%。台积电拟明年涨价10%的消息点燃板块情绪。道指涨0.74%至52225点。87%已公布标普500公司超利润预期。GM和3M强劲业绩为财报季开了好头。</p>
-        <span class="source">📎 搜狐财经 / MarketScreener / Edgen Tech</span>
+        <span class="num">14</span><h3>美股三连跌后强势反弹：标普+0.9%，费城半导体+5.2%创月内最佳，存储芯片+11.2%</h3>
+        <p>7月21日美股全面反攻：标普涨0.89%至7509点，道指涨0.74%至52225点，纳指涨1.29%至25837点（三周最佳）。费城半导体暴涨5.2%——美光+12.2%、Intel+8.6%、AMD+8%+。存储芯片指数狂飙11.2%。台积电拟2027年涨价10%成为引爆点，英伟达确认最新芯片已交付客户。87-88%已公布标普公司超预期。3M+7%、GM+5%为财报季开好头。</p>
+        <span class="source">📎 MarketScreener / Edgen Tech / 搜狐</span>
       </div>
 
       <div class="news-item">
-        <span class="num">15</span><h3>港股恒指微跌0.04%，半导体板块领涨：华虹+17.9%、中芯+8.2%</h3>
-        <p>恒指7月21日微跌0.04%至25132点，国企指数跌0.25%。恒生科技指数涨1.32%至4814点。半导体板块领涨——华虹宏力飙升17.9%、中芯国际涨8.2%。AI概念股井喷：智谱暴涨36.89%、MINIMAX涨15.17%、建滔积层板涨12.3%。大市成交2899亿港元为逾一个月首次低于3000亿。南向资金净流入71.67亿港元。分析预计恒指短期维持24200-25500点区间震荡。</p>
-        <span class="source">📎 格隆汇 / 元大证券 / 星岛日报</span>
+        <span class="num">15</span><h3>今夜！Alphabet和特斯拉公布Q2财报：AI千亿豪赌的回报大考</h3>
+        <p>Alphabet（预期EPS$2.88、+25%；收入$1170亿、+21%）今夜收盘后放榜——Google Cloud增速（预期67-70%）和AI资本开支$1800-1900亿（同比翻倍）为市场核心关切。云业务积压订单$4620亿、新客户数翻倍，但Evercore ISI预期2027年资本开支或进一步升至$3000亿。特斯拉（预期EPS$0.52、+30%；收入$260亿、+16%）——Robotaxi/Cybercab时间表和毛利率走势为焦点。持股11509 BTC约$9亿。</p>
+        <span class="source">📎 Edgen Tech / TipRanks / Yahoo Finance</span>
       </div>
 
       <div class="news-item">
-        <span class="num">16</span><h3>Alphabet和特斯拉今夜公布财报：AI投资回报的终极考验</h3>
-        <p>Q2财报季最大焦点今夜揭晓。Alphabet（预期EPS $2.87、收入$1170亿、+21%）——Google Cloud增速和$1800-1900亿AI资本开支计划为市场核心关切。Google秘密开发Frozen v2芯片（效率可达现有TPU 6-10倍）推动股价盘前涨3%以上。特斯拉（预期EPS $0.52、收入$260亿、+16%）——Robotaxi/Cybercab时间表和毛利率为焦点。特斯拉持股11509枚BTC价值约$7.45-8.95亿。</p>
-        <span class="source">📎 Edgen Tech / Yahoo Finance / TipRanks</span>
+        <span class="num">16</span><h3>港股恒指微跌0.04%，华虹宏力+17.9%、中芯+8.2%，AI概念股智谱+36.89%</h3>
+        <p>恒指7月21日微跌0.04%至25132点，恒生科技涨1.32%至4814点。半导体领涨：华虹宏力飙升17.9%、中芯国际涨8.2%。AI大模型概念井喷——智谱暴涨36.89%、MINIMAX涨15.17%、建滔积层板涨12.3%。大市成交2899亿为逾一个月首次跌破3000亿。南向资金净流入71.67亿港元。热门中概股隔夜普跌——阿里-2%、拼多多/百度-1%+。分析预计恒指短期维持24200-25500区间。</p>
+        <span class="source">📎 格隆汇 / 元大证券 / 第一财经</span>
       </div>
 
       <div class="news-item">
-        <span class="num">17</span><h3>"万物齐涨"：风险资产与避险资产罕见同步大涨</h3>
-        <p>7月21日全球市场上演罕见一幕：股市（标普+0.9%、纳指+1.3%）、原油（布伦特+2.7%至$91.64）、黄金（+1.8%至$4084）、比特币（+3%至$66956）、白银（+4.8%）同时大涨。美元指数突破101，美债10年期收益率升至4.63%。分析师认为市场正"透过地缘风险看财报"——强劲Q2盈利（超90%公司超预期）和AI算力需求实际增长正在抵消中东战争恐慌。</p>
+        <span class="num">17</span><h3>对冲基金"投降式"抛售创纪录，科技股净敞口降至两年最低后空头回补爆发</h3>
+        <p>高盛PB数据：对冲基金过去两个月以"创纪录速度"减持科技股，净敞口降至近两年最低。美银：基金大举从半导体转投能源。但7月21日纳指100+1.9%、费城半导体+5.2%显示空头压力正快速释放。Navellier预计"超预期盈利+正向指引将推动显著反弹"。花旗宣布"七巨头"概念已过时，建议转向更广泛的AI"增长集群"。市场关注今夜Alphabet/Tesla财报能否验证AI盈利逻辑。</p>
+        <span class="source">📎 财联社 / GuruFocus / MarketScreener</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">18</span><h3>台积电拟涨价10%点燃芯片板块，存储芯片指数暴涨11.2%</h3>
+        <p>台积电通知客户2027年拟对3nm及先进封装涨价最高10%，反映AI算力需求远超产能。消息引爆芯片股全线反攻：美光+12.2%、Intel+8.6%、AMD+8%+、博通+6.7%、Marvell+6.7%。存储芯片指数狂飙11.2%。英伟达确认最新芯片设计已交付客户。前期韩国KOSPI月跌20%+SK海力士两日跌25%积累空头回补力量释放。Intel周四财报为下一关键窗口。</p>
+        <span class="source">📎 Edgen Tech / The Edge Singapore / 巨丰财经</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">19</span><h3>"万物齐涨"：风险资产与避险资产罕见同步，市场"透过地缘看盈利"</h3>
+        <p>7月21日全球市场罕见共振：美股（纳指+1.3%）、原油（WTI$85、布伦特$91.64各+2.5%）、黄金（$4084/+1.8%）、比特币（$66956/+3%六周新高）、白银（+4.8%）、铜（+2.1%）同步大涨。美元突破101，美债收益率升至4.63%。分析认为市场正透过中东地缘风险聚焦强劲财报基本面——88%公司超预期+AI算力需求数据强劲——但滞胀交易隐忧也在升温。</p>
         <span class="source">📎 FX168 / Investing.com / EBN</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">18</span><h3>对冲基金"投降式"抛售创纪录，科技股仓位降至两年最低</h3>
-        <p>高盛Prime Brokerage数据更新：对冲基金过去两个月以"创纪录速度"减持美国科技股，净敞口降至近两年最低水平，部分呈现"投降式抛售"特征。美银策略师指出基金大举从半导体转投能源板块。但纳指100周一暴涨1.9%、费城半导体+5.2%显示空头压力正在快速释放。Navellier预计"超预期盈利和正向指引将推动显著反弹"。花旗宣布"七巨头"概念已过时。</p>
-        <span class="source">📎 财联社 / GuruFocus / ChainCatcher</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">19</span><h3>存储芯片指数暴涨11.2%，台积电拟涨价10%点燃板块</h3>
-        <p>存储芯片板块7月21日爆发：闪迪和韩国存储厂商领涨，整体存储芯片指数飙升11.2%。催化剂为台积电通知客户2027年拟涨价最高10%（3nm及先进封装），反映AI算力需求远超产能。美光+12%领跑费城半导体成分股。此前恐慌抛售（韩国KOSPI月跌20%+SK海力士两日跌25%）积累的空头回补力量释放。但分析师警告单日暴涨后仍需业绩验证支撑，Intel周四财报为下一个观察窗口。</p>
-        <span class="source">📎 Edgen Tech / The Edge Singapore / 东方财富</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">20</span><h3>周三A股盘前：全球"Risk-On"共振，关注科技反弹持续性</h3>
-        <p>7月22日A股盘前内外利好共振：美股芯片暴涨（费城半导体+5.2%）、Alphabet/Tesla财报今晚揭晓、八大券商集体看多、国家队+央企+险资增持落地。创业板前日+7.05%创年内最大涨幅，半导体板块超10%暴涨。市场关注反弹高度——中信证券认为调整后正酝酿新一轮行情，中金判断二次买点已至。今日三星Galaxy全球发布会、2026国际低空经济博览会开幕、引力一号海上发射等事件提供额外催化剂。</p>
-        <span class="source">📎 东方财富 / 格隆汇 / 同花顺</span>
       </div>
 
     </div>
@@ -240,45 +233,33 @@
     <div class="news-list">
 
       <div class="news-item">
-        <span class="num">21</span><h3>今夜！Alphabet和特斯拉公布Q2财报：AI回报终极考验</h3>
-        <p>Q2财报季高潮今夜到来。Alphabet（Google）预期：EPS $2.87（+25% YoY）、收入$1170亿（+21%）、云收入是关键。市场聚焦$1800-1900亿AI资本开支计划——同比翻倍，投资者要看到回报。此前Google秘密开发Frozen v2芯片消息已推动股价涨3%。特斯拉预期：EPS $0.52（+30%）、收入$260亿（+16%）。焦点为Robotaxi/Cybercab时间表、Optimus进展、毛利率趋势。持股11509 BTC按市价约$8亿。</p>
-        <span class="source">📎 Edgen Tech / TipRanks / Yahoo Finance</span>
+        <span class="num">20</span><h3>今夜揭晓！Alphabet和特斯拉Q2财报：AI投资回报的终极考验</h3>
+        <p>Q2财报最大焦点今夜揭晓。Alphabet：EPS预期$2.88（+25%）、收入$1170亿（+21%）、云收入增速67-70%预期。AI资本开支$1800-1900亿（同比翻倍），Evercore预计2027年或飙至$3000亿。云积压订单$4620亿、新客户数翻倍。Truist评级买入目标$430。特斯拉：EPS$0.52（+30%）、收入$260亿（+16%），Q2交付480100辆（+25%超预期）。Robotaxi/Cybercab时间表+Optimus进展是电话会焦点。持股11509BTC。</p>
+        <span class="source">📎 Edgen Tech / TipRanks / 东方财富</span>
       </div>
 
       <div class="news-item">
-        <span class="num">22</span><h3>费城半导体单日暴涨5.2%：美光+12%，台积电涨价10%引爆板块</h3>
-        <p>7月21日芯片股集体暴动：费城半导体指数涨5.2%、纳指100涨1.9%创三周最佳。存储芯片指数狂飙11.2%。美光+12%、AMD+8%+、英特尔+8%+。直接催化剂：台积电通知客户2027年拟对3nm及先进封装涨价最高10%。英伟达最新芯片设计已开始交付客户；英特尔透露进一步裁员计划。分析师：前期超卖+AI需求基本面未变=空头回补爆发。但Wells Fargo警告"中期上升趋势已受损"。</p>
-        <span class="source">📎 MarketScreener / Edgen Tech / 搜狐</span>
+        <span class="num">21</span><h3>费城半导体+5.2%、存储芯片+11.2%：美光+12%，台积电涨价10%成引爆点</h3>
+        <p>7月21日芯片板块经历"报复性反弹"。费城半导体涨5.2%创一个月最佳。存储芯片指数飙升11.2%——闪迪涨超14%、美光+12.2%。台积电通知客户2027年拟涨价10%（3nm及先进封装）成为板块引爆点。英伟达确认最新芯片设计已开始交付客户。Intel涨8.6%受进一步裁员消息推动。Wells Fargo CIO谨慎评价："半导体调整是健康估值检验，但中期上升趋势已受损。"</p>
+        <span class="source">📎 MarketScreener / Edgen Tech / 搜狐财经</span>
       </div>
 
       <div class="news-item">
-        <span class="num">23</span><h3>华为"韬定律"开辟国产算力新路径，Kimi K3开源2.8万亿参数</h3>
-        <p>华为发布"韬定律"算力理论框架，提出有别于英伟达CUDA生态的国产芯片性能增长路径。月之暗面正式开源Kimi K3大模型（2.8万亿参数），性能宣称逼近GPT-5级别。中昊芯英自研TPU"须臾"及3D近存计算AI芯片（14nm/520TFLOPS）已在WAIC 2026亮相。国产AI"架构创新+政策提速+资金涌入"三箭齐发，正快速缩小与美国的差距。</p>
+        <span class="num">22</span><h3>七巨头AI资本开支2026年合计$7250亿：Google$1900亿领跑，Meta$500亿+</h3>
+        <p>Edgen Tech汇总数据显示，美国"七巨头"2026年AI资本开支合计约$7250亿。Alphabet领跑（$1800-1900亿，6月刚完成$800亿股权融资含巴菲特$100亿），Meta路易斯安那扩至5GW（$500亿+投资），微软、亚马逊同步大幅加码。五大云厂商2026年资本开支上修至$7690亿（+79%）。市场从"算力稀缺"叙事转向"过剩担忧"，投资者要求看到可量化的AI收入增长。</p>
+        <span class="source">📎 Edgen Tech / Nasdaq / Seoul Shinmun</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">23</span><h3>Intel周四财报：18A盈利+代工客户获取成焦点，AMD数据中心营收首超部分Intel业务</h3>
+        <p>英特尔7月23日公布Q2财报，预期EPS$0.22（去年同期亏损）、收入$144亿（+12%）。关键看点：数据中心与AI业务扭亏进展、Intel Foundry Services客户获取（已获Tesla 14A和Apple美国制造订单）、CHIPS法案资金落地情况。此前Intel与Google Gemini扩大合作重构芯片设计流程。7月21日Intel股价涨8.6%受进一步裁员消息推动。美国政府持有约10%股权。</p>
+        <span class="source">📎 TipRanks / Upstox / Yahoo Finance</span>
+      </div>
+
+      <div class="news-item">
+        <span class="num">24</span><h3>华为"韬定律"+Kimi K3（2.8万亿参数）开源：中国AI架构创新绕开制程封锁</h3>
+        <p>华为发布"韬定律"算力理论框架，提出有别于英伟达CUDA生态的国产AI芯片性能增长路径。月之暗面正式开源Kimi K3大模型（2.8万亿参数），性能宣称逼近GPT-5级别。中昊芯英"须臾"TPU和3D近存计算AI芯片（14nm/520TFLOPS）亮相WAIC 2026。北京制定Token经济政策+下半年新增算力5万P。中国AI"架构创新+政策提速+资金涌入"三箭齐发，正快速缩小与美差距。</p>
         <span class="source">📎 新华财经 / 凤凰科技 / 证券时报</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">24</span><h3>Intel财报周四公布：18A盈利能力+代工业务进展为焦点</h3>
-        <p>英特尔将于7月23日（周四）公布Q2财报，预期调整后EPS $0.22（去年同期亏损）、收入$144亿（+12%）。市场焦点：数据中心与AI业务扭亏进展、Intel Foundry Services代工客户获取进度（已获特斯拉14A和苹果美国制造订单）、CHIPS法案资金落地情况。此前英特尔与Google Gemini合作重构芯片设计流程，但18A盈利能力遭持续质疑。美国政府持有约10%股权。AMD在数据中心营收领域首次超越部分英特尔业务。</p>
-        <span class="source">📎 TipRanks / Upstox / Digital Today</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">25</span><h3>台积电追加$1000亿扩建亚利桑那，AI基建竞赛进入"万亿时代"</h3>
-        <p>台积电Q2财报披露追加1000亿美元扩建亚利桑那（新增4座晶圆厂+封装设施），Q2营收同比增34%，66%来自高性能计算。北美五大云厂商2026年资本开支预计达6440亿（+79%），2027年增至7590亿。Google AI资本开支$1800-1900亿、Meta路易斯安那园区扩至5GW（投资$500亿+）。台积电拟涨价10%的信号表明：AI算力需求远超供给能力，芯片产能紧缺仍将是未来2-3年主旋律。</p>
-        <span class="source">📎 Nasdaq / Noah News / 华尔街见闻</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">26</span><h3>三星Galaxy全球发布会7月22日举行，AI手机大战升级</h3>
-        <p>三星Galaxy全球新品发布会7月22日举行，预计发布搭载新一代AI功能的折叠屏手机和智能穿戴设备。苹果iPhone 17周期+保守AI策略逆势获认可，年内涨16.9%领跑七巨头。苹果6月25日上调Mac/iPad售价应对存储芯片成本压力。联想、小米等中国厂商同步加速AI终端布局。全球AI竞争从数据中心芯片延伸到消费终端的趋势已不可逆。</p>
-        <span class="source">📎 同花顺 / Morningstar</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">27</span><h3>2026国际低空经济博览会开幕+引力一号海上发射，新质生产力加速</h3>
-        <p>2026国际低空经济博览会7月22日开幕，聚焦eVTOL、无人机物流、城市空中交通等前沿场景。同一天引力一号运载火箭执行海上发射任务。工信部此前披露人形机器人上半年产量超4万台、全年预计超10万台。上交所科创板新增"机器人"行业类别。中国新质生产力战略覆盖"低空经济+商业航天+人形机器人+AI算力"四大方向，产业落地速度超出市场预期。</p>
-        <span class="source">📎 同花顺 / 浙商证券 / 新华财经</span>
       </div>
 
     </div>
@@ -290,26 +271,26 @@
     <div class="news-list">
 
       <div class="news-item">
-        <span class="num">28</span><h3>布伦特原油突破$91，美伊冲突+胡塞封锁双重驱动</h3>
-        <p>布伦特原油7月21日涨2.7%至$91.64/桶，WTI涨2.1%至$84.54/桶。美伊战争十日连击+胡塞宣布对沙特海上禁令+里海管道联盟运输暂停三重供给冲击叠加。布伦特月内累计上涨约24%。美汽油零售价重回$4/加仑上方。TD证券警告若绕行管道也遭破坏油价或冲向$150。伊朗警告核设施若遭袭将全面扩大报复，但已收到调解方案——十一天停火方案仍在讨论中。</p>
+        <span class="num">25</span><h3>布伦特$91.64、WTI$85：美伊战争+胡塞封锁+哈萨克管道停运三重供给冲击</h3>
+        <p>布伦特原油7月21日涨2.7%至$91.64/桶，WTI涨2.5%至$85.03。三重供给冲击叠加：美伊十日连击+特朗普威胁打击核设施；胡塞对沙特海上禁令，两艘沙特油轮红海折返、六艘商船24小时内掉头；哈萨克斯坦因油轮遭袭暂停黑海运输。布伦特月内累涨约24%。美汽油零售价重回$4/加仑上方。TD证券警告若双海峡（霍尔木兹+曼德）同封，油价可测$120-150。</p>
         <span class="source">📎 FX168 / Investing.com / 大河财立方</span>
       </div>
 
       <div class="news-item">
-        <span class="num">29</span><h3>黄金突破$4080，白银暴涨4.8%——避险与风险偏好罕见同涨</h3>
-        <p>COMEX黄金7月21日涨1.65%至$4082/盎司，现货金触及$4084。白银大涨4.8%至$59以上。铂金$1625（+1.9%）、钯金$1282（+2.3%）。伦铜涨2.1%至$13905/吨，锡涨2.3%至$54105。中东战争持续提供避险买盘，但美元突破101和美债收益率升至4.63%未能压制金价——分析认为地缘风险溢价和通胀对冲需求正在主导贵金属定价。黄金在$4000关口获得坚实支撑。</p>
-        <span class="source">📎 FX168 / 东方财富 / 大河财立方</span>
+        <span class="num">26</span><h3>黄金突破$4084、白银+4.8%：避险与风险偏好罕见同涨</h3>
+        <p>COMEX黄金7月21日涨1.8%至$4084/盎司。白银暴涨4.8%至$59+。铂金$1625（+1.9%）、钯金$1282（+2.3%）。伦铜$13905（+2.1%）、锡$54105（+2.3%）。虽然美元突破101、美债收益率升至4.63%通常压制贵金属，但中东战争持续+通胀对冲需求主导了贵金属定价。黄金在$4000关口获得坚实支撑，分析师认为已找到短期底部但上行动能仍待确认。</p>
+        <span class="source">📎 FX168 / 东方财富 / EBN</span>
       </div>
 
       <div class="news-item">
-        <span class="num">30</span><h3>比特币冲上$66000创六周新高，ETF资金回流浪潮推动</h3>
-        <p>比特币7月21日涨1.6-3%至$66956，创六周以来新高。以太坊同步上涨。现货BTC ETF近期资金流入明显改善，与前期创纪录流出形成逆转。美国加密监管清晰化立法（Clarity Act接近通过）为额外催化剂。比特币在黄金+原油+股票"万物齐涨"行情中同步上行，全球加密货币总市值突破2.32万亿美元。分析认为BTC正逐步摆脱"加密货币寒冬"叙事，$65000支撑已确认。</p>
-        <span class="source">📎 FX168 / Gate.io / EBN</span>
+        <span class="num">27</span><h3>比特币冲天$66956创六周新高，现货ETF资金回流+加密监管立法预期双驱动</h3>
+        <p>比特币7月21日猛涨3%至$66956，创六周新高。以太坊同步走高，全球加密货币总市值突破2.32万亿。现货BTC ETF资金流入明显改善（与此前创纪录流出形成逆转）。美国加密监管清晰化立法（Clarity Act接近通过）为额外催化剂。$68000关口为关键阻力位。分析师认为BTC正逐步走出"加密货币寒冬"叙事，$65000支撑位已确认。特斯拉持11509BTC按现价约$7.7亿。</p>
+        <span class="source">📎 FX168 / Gate.io / Newsis</span>
       </div>
 
       <div class="news-item">
-        <span class="num">31</span><h3>中国削减伊朗石油40%重塑全球原油贸易格局，沙特补位增产</h3>
-        <p>中国近月削减伊朗石油进口约40%，主因美方制裁中国民营"茶壶"炼厂。中国转而增加沙特、俄罗斯等来源采购，全球原油贸易格局正在重塑。沙特借机增产补位，OPEC+继续推进增产计划。但霍尔木兹海峡（伊朗控制）+曼德海峡（胡塞威胁）双咽喉风险仍在——全球约30%海运石油贸易面临中断威胁。分析预计若双海峡同时受阻，油价或测试$120-150区间。</p>
+        <span class="num">28</span><h3>中国削减伊朗石油40%重塑全球原油版图，沙特补位增产</h3>
+        <p>中国近月削减伊朗石油约40%，主因美国制裁"茶壶"民营炼厂。中国转向沙特、俄罗斯等来源补缺，全球原油贸易格局加速重塑。沙特借机增产补位，OPEC+继续推进增产。但全球约30%海运石油贸易仍面临霍尔木兹海峡（伊朗控制）+曼德海峡（胡塞威胁）双咽喉风险。分析预计若双海峡同时中断，油价可能测试$120-150区间，夏季需求高峰使风险进一步放大。</p>
         <span class="source">📎 Investing.com / CME Group / 华尔街见闻</span>
       </div>
 
@@ -317,9 +298,9 @@
   </div>
 
   <div class="footer">
-    <p>📰 新闻驿站 · 每日自动推送 · 信息全部来自免费公开信源 · 更新于 2026-07-22 08:03 CST</p>
+    <p>📰 新闻驿站 · 每日推送 · 信息全部来自免费公开信源 · 更新于 2026-07-22 08:03 CST</p>
     <p style="margin-top:4px">永久链接：<a href="https://mogu19940531.github.io/news-station/" style="color:var(--blue)">https://mogu19940531.github.io/news-station/</a></p>
-    <p style="margin-top:4px">信息源：Reuters · CNBC · AP News · 证券时报 · 21世纪经济报道 · 华尔街见闻 · 财联社 · 东方财富 · Nasdaq · Investing.com · FX168 · Edgen Tech 等</p>
+    <p style="margin-top:4px">信息源：Reuters · CNBC · AP · 新华社 · 证券时报 · 21世纪经济报道 · 华尔街见闻 · 财联社 · 东方财富 · Nasdaq · Investing.com · FX168 · Edgen Tech 等</p>
   </div>
 </div>
 
