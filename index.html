@@ -5,45 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新闻驿站 — 2026年7月28日</title>
 <style>
-  :root{--red:#D64045;--blue:#2C6FCE;--green:#1A8A4A;--orange:#E07B39;--purple:#7B4FBF;--bg:#F8F9FB;--card:#FFF;--text:#1A1A2E;--muted:#6B7280;--border:#E5E7EB;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 6px rgba(0,0,0,.05),0 2px 4px rgba(0,0,0,.04)}
+  :root{--red:#D64045;--blue:#2563EB;--green:#16A34A;--orange:#EA580C;--purple:#7C3AED;--gold:#D97706;--bg:#F1F5F9;--card:#FFF;--text:#0F172A;--muted:#64748B;--border:#E2E8F0;--shadow:0 1px 2px rgba(0,0,0,.04);--shadow-card:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04)}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  .header{background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%);color:#fff;padding:22px 0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+  /* Header */
+  .header{background:#0F172A;color:#fff;padding:16px 0 12px;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.12)}
   .header-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .header h1{font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
-  .header h1 span{color:#F59E0B}
-  .header .date{font-size:.82rem;color:#94A3B8}
-  .header .badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:2px 10px;font-size:.7rem;color:#CBD5E1;margin:1px}
-  .container{max-width:1100px;margin:0 auto;padding:16px 24px}
-  .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:18px}
-  .dash-card{background:var(--card);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow);border:1px solid var(--border)}
-  .dash-card .label{font-size:.64rem;letter-spacing:.03em;color:var(--muted);margin-bottom:2px}
-  .dash-card .value{font-size:1rem;font-weight:700}
-  .dash-card .change{font-size:.68rem;margin-left:3px}
-  .up{color:#D64045}.down{color:#1A8A4A}
-  .section{margin-bottom:22px}
-  .section-title{display:flex;align-items:center;gap:9px;font-size:1.05rem;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border)}
-  .section-title .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-  .section.red .dot{background:var(--red)}.section.red .section-title{border-color:#FECACA}
-  .section.blue .dot{background:var(--blue)}.section.blue .section-title{border-color:#BFDBFE}
-  .section.green .dot{background:var(--green)}.section.green .section-title{border-color:#BBF7D0}
-  .section.purple .dot{background:var(--purple)}.section.purple .section-title{border-color:#DDD6FE}
-  .section.orange .dot{background:var(--orange)}.section.orange .section-title{border-color:#FED7AA}
-  .news-list{display:flex;flex-direction:column;gap:6px}
-  .news-item{background:var(--card);border-radius:8px;padding:11px 16px;box-shadow:var(--shadow);border:1px solid var(--border);border-left:4px solid transparent;transition:box-shadow .15s}
-  .news-item:hover{box-shadow:var(--shadow-md)}
-  .section.red .news-item{border-left-color:var(--red)}.section.blue .news-item{border-left-color:var(--blue)}
-  .section.green .news-item{border-left-color:var(--green)}.section.purple .news-item{border-left-color:var(--purple)}
-  .section.orange .news-item{border-left-color:var(--orange)}
-  .news-item .num{display:inline-block;font-size:.62rem;font-weight:700;color:#fff;background:var(--muted);border-radius:3px;padding:1px 5px;margin-right:5px;vertical-align:middle}
-  .news-item h3{display:inline;font-size:.86rem;font-weight:700;vertical-align:middle}
-  .news-item p{margin-top:4px;font-size:.82rem;color:#374151;line-height:1.6}
-  .news-item .source{display:inline-block;margin-top:5px;font-size:.68rem;color:var(--muted);background:#F3F4F6;border-radius:4px;padding:2px 6px}
-  .summary-box{background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);border:1px solid #FCD34D;border-radius:10px;padding:14px 18px;margin-bottom:22px}
-  .summary-box h3{font-size:.76rem;letter-spacing:.05em;color:#92400E;margin-bottom:6px}
-  .summary-box p{font-size:.82rem;color:#78350F;line-height:1.7}
-  .footer{text-align:center;padding:14px;font-size:.68rem;color:var(--muted);border-top:1px solid var(--border);margin-top:8px}
-  @media(max-width:768px){.header h1{font-size:1.1rem}.dashboard{grid-template-columns:repeat(2,1fr)}.news-item{padding:9px 11px}}
+  .header h1{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;color:#fff}
+  .header h1 em{font-style:normal;color:#F59E0B}
+  .header .sub{font-size:.68rem;color:#94A3B8;margin-top:1px}
+  .header .date{font-size:.78rem;color:#94A3B8;text-align:right}
+  .container{max-width:1100px;margin:0 auto;padding:14px 20px}
+
+  /* Dashboard */
+  .dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:18px}
+  .dash-card{background:var(--card);padding:10px 12px;text-align:center}
+  .dash-card .label{font-size:.62rem;color:var(--muted);margin-bottom:2px;letter-spacing:.02em}
+  .dash-card .value{font-size:.95rem;font-weight:700}
+  .dash-card .change{font-size:.66rem;margin-left:2px}
+  .up{color:var(--red)}.down{color:var(--green)}
+
+  /* Section */
+  .section{margin-bottom:20px}
+  .section-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:6px;border-bottom:1.5px solid var(--border)}
+  .section-head .icon{font-size:1rem}
+  .section-head h2{font-size:.95rem;font-weight:700}
+  .section-head .count{font-size:.7rem;color:var(--muted);margin-left:auto}
+
+  /* News card */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .news-item{background:var(--card);border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-card);border:1px solid var(--border);position:relative;overflow:hidden}
+  .news-item .tag{display:inline-block;font-size:.58rem;font-weight:600;padding:1px 6px;border-radius:3px;margin-right:4px;vertical-align:middle;text-transform:uppercase}
+  .tag-red{background:#FEE2E2;color:#991B1B}.tag-blue{background:#DBEAFE;color:#1E40AF}
+  .tag-green{background:#DCFCE7;color:#166534}.tag-purple{background:#EDE9FE;color:#5B21B6}
+  .tag-orange{background:#FFF7ED;color:#9A3412}.tag-gold{background:#FEF3C7;color:#92400E}
+  .news-item h3{font-size:.84rem;font-weight:700;margin:4px 0;line-height:1.35}
+  .news-item p{font-size:.76rem;color:#475569;line-height:1.55}
+  .news-item .src{font-size:.64rem;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:4px}
+
+  /* Quote card */
+  .quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:7px}
+  .quote-card{background:var(--card);border-radius:8px;padding:14px 16px;box-shadow:var(--shadow-card);border-left:4px solid var(--purple)}
+  .quote-card .who{font-size:.76rem;font-weight:700;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .quote-card .who .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#4F46E5);display:flex;align-items:center;justify-content:center;font-size:.68rem;color:#fff;font-weight:700;flex-shrink:0}
+  .quote-card .who .role{font-size:.64rem;color:var(--muted);font-weight:400}
+  .quote-card .quote{font-size:.8rem;color:#334155;line-height:1.6;font-style:italic;quotes:none}
+  .quote-card .quote::before{content:'" ';color:var(--purple);font-weight:700}
+  .quote-card .quote::after{content:' "';color:var(--purple);font-weight:700}
+
+  /* Summary box */
+  .focus-box{background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);border:1px solid #FCD34D;border-radius:10px;padding:14px 18px;margin-bottom:18px}
+  .focus-box h3{font-size:.74rem;letter-spacing:.04em;color:#92400E;margin-bottom:8px}
+  .focus-box .focus-item{font-size:.8rem;color:#78350F;line-height:1.6;margin-bottom:5px;padding-left:12px;border-left:2px solid #FCD34D}
+  .focus-box .focus-item strong{color:#92400E}
+
+  .footer{text-align:center;padding:14px;font-size:.66rem;color:var(--muted);border-top:1px solid var(--border);margin-top:8px;line-height:1.8}
+  .footer a{color:var(--blue);text-decoration:none}
+
+  @media(max-width:768px){
+    .dashboard{grid-template-columns:repeat(2,1fr)}
+    .grid2{grid-template-columns:1fr}
+    .quote-grid{grid-template-columns:1fr}
+    .header h1{font-size:1.1rem}
+  }
+  @media print{.header{position:static}.news-item{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -51,250 +77,233 @@
 <header class="header">
   <div class="header-inner">
     <div>
-      <h1>📰 新闻<span>驿站</span></h1>
-      <div style="font-size:.68rem;color:#94A3B8;margin-top:1px;">全球重大新闻 · 中美视角 · 每日推送</div>
+      <h1>📰 新闻<em>驿站</em></h1>
+      <div class="sub">全球财经 · 科技 · 政策 ｜ 每日精准速览</div>
     </div>
-    <div style="text-align:right">
-      <div class="date">2026年7月28日 · 星期二</div>
-      <div class="badge">🌍 国际</div>
-      <div class="badge">💰 经济</div>
-      <div class="badge">📈 股市</div>
-      <div class="badge">🔬 科技</div>
-      <div class="badge">🛢️ 商品</div>
-    </div>
+    <div class="date">2026年7月28日 · 星期二</div>
   </div>
 </header>
 
 <div class="container">
 
+  <!-- ═══ DASHBOARD ═══ -->
   <div class="dashboard">
-    <div class="dash-card"><div class="label">🇺🇸 标普500</div><div class="value">7,413 <span class="change up">▲ 0.02%</span></div></div>
-    <div class="dash-card"><div class="label">🇺🇸 纳斯达克</div><div class="value">24,932 <span class="change down">▼ 0.2%</span></div></div>
-    <div class="dash-card"><div class="label">🇨🇳 上证综指</div><div class="value">3,813 <span class="change down">▼ 1.2%</span></div></div>
-    <div class="dash-card"><div class="label">🇨🇳 CSI 300</div><div class="value">4,570 <span class="change down">▼ 2.8%</span></div></div>
-    <div class="dash-card"><div class="label">🇭🇰 恒生指数</div><div class="value">25,311 <span class="change up">▲ 0.4%</span></div></div>
-    <div class="dash-card"><div class="label">🛢️ 布伦特原油</div><div class="value">$85.87 <span class="change down">▼ 11.3%</span></div></div>
-    <div class="dash-card"><div class="label">🪙 黄金</div><div class="value">$4,084 <span class="change up">▲ 0.2%</span></div></div>
-    <div class="dash-card"><div class="label">₿ 比特币</div><div class="value">$66,000 <span class="change up">▲ 0.8%</span></div></div>
+    <div class="dash-card"><div class="label">标普500</div><div class="value">7,413 <span class="up">▲0.02%</span></div></div>
+    <div class="dash-card"><div class="label">纳斯达克</div><div class="value">24,932 <span class="down">▼0.2%</span></div></div>
+    <div class="dash-card"><div class="label">上证综指</div><div class="value">3,813 <span class="down">▼1.2%</span></div></div>
+    <div class="dash-card"><div class="label">恒生指数</div><div class="value">25,311 <span class="up">▲0.4%</span></div></div>
+    <div class="dash-card"><div class="label">布伦特原油</div><div class="value">$85.87 <span class="down">▼11.3%</span></div></div>
+    <div class="dash-card"><div class="label">黄金</div><div class="value">$4,084 <span class="up">▲0.2%</span></div></div>
+    <div class="dash-card"><div class="label">比特币</div><div class="value">$66,000 <span class="up">▲0.8%</span></div></div>
+    <div class="dash-card"><div class="label">10Y美债</div><div class="value">4.55% <span class="down">▼10bp</span></div></div>
   </div>
 
-  <div class="summary-box">
-    <h3>💡 今日五大主线</h3>
-    <p>
-      <strong>① Kimi K3正式开源，中国AI登顶全球第一：</strong>杨植麟的月之暗面开源2.8万亿参数K3模型，登顶Frontend Code Arena六项第一，Vercel CEO称"开源模型首次领先所有闭源"。Nasdaq期货跌2%、Z.ai暴跌30%。白宫指控K3使用禁运芯片，硅谷25巨头联名反对封杀。<br>
-      <strong>② 美联储今日召开FOMC：</strong>Warsh第二次利率决策，64%按兵不动 vs 36%加息。Trump施压降息；鹰派Logan/Hammack主张加息。明晨2:00新闻发布会为全球焦点。<br>
-      <strong>③ 美伊暂停攻击，布伦特原油单日暴跌11%：</strong>特朗普宣布应伊朗请求暂停军事打击，油价创4月来最大跌幅。但伊朗否认存在谈判，停火极脆弱。<br>
-      <strong>④ 韩国KOSPI暴跌10%触发熔断：</strong>费城半导体跌入技术性熊市。Alphabet Q2云+82%但自由现金流首次转负(-$59亿)，AI烧钱叙事引发全球科技股重估。<br>
-      <strong>⑤ 内塔尼亚胡与泽连斯基同日访美：</strong>分别就伊朗战争和俄乌冲突会晤特朗普。日本熊本7.1级地震冲击半导体供应链。苹果市值$4.95万亿登顶全球第一。
-    </p>
+  <!-- ═══ TODAY'S FOCUS ═══ -->
+  <div class="focus-box">
+    <h3>⚡ 今日必读</h3>
+    <div class="focus-item"><strong>Kimi K3开源引爆全球：</strong>2.8万亿参数登顶6项基准，Vercel CEO称"开源首次超越闭源"。全球科技股三日蒸发$4700亿，Z.ai暴跌30%。白宫指责使用禁运芯片，硅谷25巨头联名反对封杀。</div>
+    <div class="focus-item"><strong>FOMC今日开会：</strong>Warsh面临上任后最艰难决策——64%概率维持不变 vs 36%加息。城堡证券逆势押注加息。Trump施压降息。明晨2:00新闻发布会定调全球资产。</div>
+    <div class="focus-item"><strong>美伊停火 + AI血洗：</strong>布伦特单日-11.3%至$85.87，但韩国KOSPI暴跌10%熔断。市场呈现"油价跌、科技崩、避险涨"的分裂格局——这是2026年最复杂的交易日之一。</div>
   </div>
 
-  <!-- ═══ SECTION 1: 国际政策 ═══ -->
-  <div class="section red">
-    <div class="section-title"><span class="dot"></span>🔴 一、国际政策</div>
-    <div class="news-list">
+  <!-- ═══ SECTION: KEY OPINIONS ═══ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🗣️</span><h2>重磅观点</h2><span class="count">今天大佬们说了什么</span></div>
+    <div class="quote-grid">
 
-      <div class="news-item">
-        <span class="num">1</span><h3>美伊暂停攻击：特朗普称"有很大机会达成协议"，伊朗否认存在谈判</h3>
-        <p>特朗普7月27日宣布应伊朗请求暂停军事打击，称"有很大机会达成协议"，但警告若谈判失败将恢复打击。伊朗外交部随即否认存在任何谈判——"伊朗永远不会让美国决定战争与和平的时机"。多家媒体确认美伊之间没有直接沟通渠道，双方通过阿曼等中间人传递信息。联合国秘书长古特雷斯呼吁"抓住这一机会实现持久停火"。</p>
-        <span class="source">📎 CNN · AP News · Anadolu Ajansı</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">黄</span> 黄仁勋 <span class="role">NVIDIA CEO</span></div>
+        <div class="quote">AI将改变每个行业、驱动每家公司、被每个国家建造。开放模型强化安全与创新。世界需要前沿闭源模型，也需要前沿开源模型。AI毁灭人类是完全的胡言乱语。</div>
+        <div class="src">📎 X首条推文 · 7月24日</div>
       </div>
 
-      <div class="news-item">
-        <span class="num">2</span><h3>内塔尼亚胡与泽连斯基同日造访白宫，分别会晤特朗普</h3>
-        <p>以色列总理内塔尼亚胡与乌克兰总统泽连斯基7月28日分别抵达华盛顿。内塔尼亚胡此行为美伊开战以来首次访美，聚焦伊朗战争走向、黎巴嫩三国和平框架及亚伯拉罕协议扩展。泽连斯基寻求强化国防合作（爱国者导弹、F-16）及对俄新制裁。两人均出席已故参议员格雷厄姆葬礼。Graham生前主导的对俄100%关税制裁法案即将在参议院表决。</p>
-        <span class="source">📎 AP News · CNN · TASS</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">马</span> Elon Musk <span class="role">Tesla / xAI CEO</span></div>
+        <div class="quote">这有我全力支持。Jensen是对的。对开源的支持势不可挡。（转推黄仁勋+扎克伯格）</div>
+        <div class="src">📎 X · 7月24日</div>
       </div>
 
-      <div class="news-item">
-        <span class="num">3</span><h3>俄罗斯宣称完全占领康斯坦丁诺夫卡（激战9个月），乌克兰攻击克里米亚14处能源设施</h3>
-        <p>俄罗斯国防部7月28日宣布经过9个月激战后完全占领顿涅茨克重镇康斯坦丁诺夫卡，并在多布罗皮利亚取得新突破（控制三分之二城区）。乌克兰则对克里米亚发动大规模无人机攻击，打击14处能源设施导致全境大面积停电。泽连斯基访美前夕乌军试图展示反击能力。俄方谴责日本-乌克兰无人机合作为"敌对行为"。欧盟第21轮对俄制裁7月23日通过。</p>
-        <span class="source">📎 Vietnam.vn · TASS · AP</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">Alt</span> Sam Altman <span class="role">OpenAI CEO</span></div>
+        <div class="quote">我希望美国在AI领域获胜，无论是开源还是闭源模型。很高兴看到这封联名信。我希望美国在开源和专有模型上都赢。</div>
+        <div class="src">📎 X · 7月25日</div>
       </div>
 
-      <div class="news-item">
-        <span class="num">4</span><h3>特朗普称若谈判破裂将"强力打击"伊朗，新关税本周或对数国加征</h3>
-        <p>特朗普7月28日接受采访时警告若伊朗谈判破裂将"强力打击"，但强调"有很大机会达成协议"。美伊开战以来已耗费约$375亿，五角大楼申请追加$670亿。与此同时，特朗普据报本周可能对数国加征新关税。以色列财长表态不参与美国对伊朗战争，但以军高度戒备。黎巴嫩-以色列下一轮谈判定于8月4-6日在罗马举行。胡塞武装继续威胁沙特和红海航运。</p>
-        <span class="source">📎 东方财富隔夜要闻 · Anadolu Ajansı · AP</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">W</span> Kevin Warsh <span class="role">美联储主席</span></div>
+        <div class="quote">通胀风险在消退。一次性的能源价格冲击或AI相关需求并非自动构成通胀。委员会将兑现价格稳定。</div>
+        <div class="src">📎 ECB论坛讲话 · 7月中旬</div>
       </div>
 
-      <div class="news-item">
-        <span class="num">5</span><h3>日本熊本县发生7.1级强震，海啸预警发布，全球半导体供应链面临冲击</h3>
-        <p>日本九州熊本县7月28日发生7.1级强烈地震，震源深度约10公里，日本气象厅紧急发布海啸预警。熊本是日本半导体产业核心区域——台积电熊本厂（JASM）、索尼CIS工厂、东京电子等多家芯片大厂均在此布局。2016年熊本地震曾导致索尼CIS停产数月。目前台积电和索尼表示正在评估受损情况。九州新干线全线停运。日本政府已启动紧急响应机制。</p>
-        <span class="source">📎 Anadolu Ajansı · Reuters · NHK</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">杨</span> 杨植麟 <span class="role">月之暗面 CEO</span></div>
+        <div class="quote">K3证明了开源模型可以在最困难的基准上击败所有闭源竞品。我们认为开放权重是推动全球AI安全与创新的最佳方式。</div>
+        <div class="src">📎 Kimi K3技术报告 · 7月27日</div>
       </div>
 
-      <div class="news-item">
-        <span class="num">6</span><h3>印尼央行行长辞职；沙特呼吁伊拉克阻止无人机袭击；联合国警告以色列在黎巴嫩或涉战争罪</h3>
-        <p>印尼央行行长佩里·沃吉约7月28日突然辞职，印尼盾汇率出现波动。沙特外交大臣呼吁伊拉克政府阻止其领土被用于针对沙特的无人机袭击。联合国人权事务高级专员警告以色列在黎巴嫩的军事行动"可能构成战争罪"——冲突已造成超4300人死亡。匈牙利总理宣布将提名国际象棋传奇朱迪特·波尔加出任总统。挪威爆发现代史上最大规模野火。</p>
-        <span class="source">📎 Bernama · Anadolu Ajansı · AP</span>
+      <div class="quote-card">
+        <div class="who"><span class="avatar">美</span> BofA分析师 <span class="role">Bank of America</span></div>
+        <div class="quote">开源模型扩大——而非缩小——存储需求。闭源模型集中需求，开源模型复制需求。K3每个推理实例需约1.4TB HBM。维持美光买入，目标$1550。</div>
+        <div class="src">📎 Benzinga · 7月28日</div>
       </div>
 
     </div>
   </div>
 
-  <!-- ═══ SECTION 2: 经济与金融 ═══ -->
-  <div class="section blue">
-    <div class="section-title"><span class="dot"></span>💰 二、经济与金融</div>
-    <div class="news-list">
+  <!-- ═══ SECTION: ECONOMY & MARKETS ═══ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">💰</span><h2>经济与市场</h2></div>
+    <div class="grid2">
 
       <div class="news-item">
-        <span class="num">7</span><h3>美联储今日召开FOMC：64%概率按兵不动，城堡证券逆势押注加息</h3>
-        <p>7月28-29日FOMC会议为美联储主席沃什上任后第二次利率决策。CME FedWatch显示64%概率维持3.50-3.75%不变，36%概率加息25bp。但城堡证券逆势押注本次将意外加息——认为鹰派委员需要"打破前瞻指引枷锁"以重塑抗通胀信誉。Trump今早再次公开施压"没有理由加息"。Warsh此前在ECB论坛称"通胀风险在消退"，但6月CPI 3.5%仍远高于2%目标。</p>
-        <span class="source">📎 CNBC · JP Morgan · 智通财经</span>
+        <span class="tag tag-blue">FOMC</span><span class="tag tag-red">加息</span>
+        <h3>美联储今日召开FOMC：Warsh第二次利率决策，64% vs 36%</h3>
+        <p>市场定价64%维持3.50-3.75%不变，36%加息25bp。城堡证券逆势押注加息——"鹰派需打破前瞻指引枷锁"。Trump今早施压"没有理由加息"。明晨2:00新闻发布会为全球焦点。</p>
+        <div class="src">📎 CNBC · JP Morgan · 智通财经</div>
       </div>
 
       <div class="news-item">
-        <span class="num">8</span><h3>美伊停火推动布伦特单日暴跌11.3%至$85.87，创4月以来最大跌幅</h3>
-        <p>特朗普宣布暂停军事攻击后，布伦特原油单日狂泻11.3%至$85.87，WTI跌约7%至$81，为4月以来最大单日跌幅。但霍尔木兹海峡航运仍远低于战前——日通行量仅290万桶（前一周一半）。高盛预计若海峡Q4完全重开，布伦特年底回落至$80。TD证券警告停火极脆弱，若谈判破裂油价可能重返$100+。OPEC+继续推进增产但效果被地缘风险抵消。</p>
-        <span class="source">📎 CNN · 东方财富 · Hindustan Times</span>
+        <span class="tag tag-green">油价</span>
+        <h3>布伦特单日-11.3%至$85.87，创4月以来最大跌幅</h3>
+        <p>美伊暂停攻击推动油价暴跌。但停火极脆弱——伊朗否认存在谈判，霍尔木兹日通行量仅290万桶。高盛预计海峡Q4若重开，布伦特年底回落$80。</p>
+        <div class="src">📎 CNN · 东方财富 · Hindustan Times</div>
       </div>
 
       <div class="news-item">
-        <span class="num">9</span><h3>苹果市值$4.95万亿超越英伟达登顶全球第一，"七巨头"概念被宣告过时</h3>
-        <p>苹果股价7月28日再创新高，总市值逼近$4.95万亿，正式超越英伟达重登全球市值第一。年内涨幅16.9%领跑七巨头——保守AI策略（不参与千亿美元数据中心竞赛）被从"迟疑"重评为"战略智慧"，iPhone 17超级周期+端侧AI策略获认可。花旗宣布"Magnificent Seven"概念已过时，建议转向更广泛的AI"增长集群"。费城半导体指数从6月高点跌超20%进入技术性熊市。</p>
-        <span class="source">📎 CNBC TV18 · Apple Insider · 东方财富</span>
+        <span class="tag tag-purple">苹果</span>
+        <h3>苹果市值$4.95万亿超越英伟达，再次登顶全球第一</h3>
+        <p>年内涨16.9%领跑七巨头。保守AI策略（不参与数据中心军备竞赛）被重评为"战略智慧"。花旗宣布"七巨头"概念已过时。费城半导体跌超20%入熊。</p>
+        <div class="src">📎 CNBC TV18 · Morningstar</div>
       </div>
 
       <div class="news-item">
-        <span class="num">10</span><h3>Alphabet Q2云收入暴增82%，但AI资本开支$2050亿致自由现金流首次转负</h3>
-        <p>Alphabet Q2财报：收入$1198亿（+24%超预期），Google Cloud暴增82%至$248亿。但全年AI资本开支指引上调至$1950-2050亿（6月刚完成$800亿股权融资含巴菲特$100亿），自由现金流首次转负——-$59亿。股价盘后跌超4%。云积压订单$4620亿、新客户数翻倍，但Evercore ISI预期2027年资本开支或飙至$3000亿。七巨头2026年AI资本开支合计约$7250亿。</p>
-        <span class="source">📎 Edgen Tech · TipRanks · Yahoo Finance</span>
+        <span class="tag tag-blue">美债</span>
+        <h3>10年期美债收益率回落至4.55%，油价暴跌缓解通胀恐慌</h3>
+        <p>伊朗停火+油价-11%推动美债收益率单日降约10bp。2年期同步下行。美元指数维持101上方。市场对9月加息概率仍高达83%。</p>
+        <div class="src">📎 IC Markets · Confluence Investment</div>
       </div>
 
       <div class="news-item">
-        <span class="num">11</span><h3>特斯拉Q2收入$282亿创纪录但毛利率承压，AI烧钱$60亿致FCF负值</h3>
-        <p>特斯拉Q2收入$282亿创历史新高，Q2交付480100辆（+25%超预期）。但降价策略压缩汽车毛利率，AI/Robotaxi资本开支近$60亿导致自由现金流转负。EPS约$0.48。股价盘后跌超4%。市场焦点：Cybercab生产时间线、三排Model Y上市、Optimus Gen 3进展。特斯拉持有11509 BTC按现价约$7.6亿。Truist给予"持有"评级，称长期价值取决于AI项目而非汽车业务。</p>
-        <span class="source">📎 BitMEX · TipRanks · Edgen Tech</span>
+        <span class="tag tag-red">韩国</span>
+        <h3>韩国KOSPI单日-10%触发熔断，日经-4%</h3>
+        <p>三重暴击：Kimi K3压低算力需求预期 + Alphabet FCF转负引发AI烧钱恐慌 + 美国声称"分享韩企存储超额利润"。SK海力士-6%。韩国央行加息加剧资本外逃。</p>
+        <div class="src">📎 Moneycontrol · AP News</div>
       </div>
 
       <div class="news-item">
-        <span class="num">12</span><h3>Intel Q2数据中心+AI营收暴增59%，七季连超预期，盘后一度涨13%</h3>
-        <p>英特尔Q2财报：收入增25%（2011年以来最快），数据中心+AI营收暴增59%，Non-GAAP EPS$0.42（翻倍于$0.21预期），连续第七季超预期。股价盘后一度涨13%后回落。18A工艺代工订单包括特斯拉、苹果和美国政府项目。但台积电疯狂扩产（亚利桑那追加$1000亿）持续给Intel带来成本压力。美国政府持有约10%股权。市场关注Intel能否在AI算力浪潮中分到足够份额。</p>
-        <span class="source">📎 Investing.com · BitMEX · Yahoo Finance</span>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ═══ SECTION 3: 股票市场 ═══ -->
-  <div class="section green">
-    <div class="section-title"><span class="dot"></span>📈 三、股票市场</div>
-    <div class="news-list">
-
-      <div class="news-item">
-        <span class="num">13</span><h3>韩国KOSPI单日暴跌10%触发熔断，AI芯片股血流成河</h3>
-        <p>7月28日韩国KOSPI指数单日暴跌10%，触发熔断机制——为2020年3月以来最惨烈单日跌幅。SK海力士跌6%、三星电子跌超5%。日经225跌4%。三重暴击：①Kimi K3开源压低全球AI算力需求预期；②Alphabet自由现金流转负引发"AI烧钱无底洞"恐慌；③美国声称"有权分享韩国存储企业超额利润"。韩国央行加息加剧资本外逃，KOSPI自6月高点累计跌幅近30%。</p>
-        <span class="source">📎 Moneycontrol · AP News · 元大证券</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">14</span><h3>Nasdaq期货跌2%，费城半导体指数进入技术性熊市（自高点-20%+）</h3>
-        <p>7月28日Nasdaq期货跌约2%，费城半导体指数从6月历史高点累计回撤超20%，正式进入技术性熊市。美光跌6.4%、Intel跌5%、台积电美股跌2.7%、SK海力士美股跌6%。高盛PB数据：对冲基金以"创纪录速度"抛售科技股，净敞口降至近两年最低。但美银指出基金大举从半导体转投能源——芯片板块超卖信号正在积累。市场关注明晨FOMC决议能否提供方向。</p>
-        <span class="source">📎 Moneycontrol · IC Markets · Schwab</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">15</span><h3>A股上证跌1.16%至3813点，创业板跌2.83%</h3>
-        <p>7月28日A股受外围拖累走低：上证跌1.16%至3813点，CSI 300跌2.83%至4570点。半导体、AI算力板块跟随全球科技股下跌。但"国家队"此前600亿增持+央企回购+险资入市为市场提供底部支撑。证监会主席吴清连开三场座谈会后明确"全力维护市场平稳运行"。花旗上调中国股票至"超配"（目标上行31%）。市场关注政治局会议政策定调。</p>
-        <span class="source">📎 东方财富 · 元大证券 · 同花顺</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">16</span><h3>港股恒指逆势涨0.41%至25311点，金融科技板块支撑</h3>
-        <p>恒生指数7月28日逆势涨0.41%至25311点，成为亚太少数收涨的市场。金融和科技板块提供支撑。南向资金持续流入。美股中概股隔夜普跌（阿里-2%、拼多多/百度-1%+），纳斯达克中国金龙指数跌0.68%。花旗上调中国股票至超配、摩根士丹利看好后市提供情绪支撑。分析预计恒指短期维持24200-25500区间震荡，FOMC决议为下一个方向催化剂。</p>
-        <span class="source">📎 元大证券 · AAStocks · 格隆汇</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">17</span><h3>"七巨头"财报季：投资者从"谁花最多"转向"谁赚最多"</h3>
-        <p>Q2财报季进入高潮。已公布约100家标普500公司中88%超利润预期。但科技巨头面临AI支出ROI拷问：Alphabet云+82%盘后仍跌4%（FCF转负），特斯拉收入$282亿创新高盘后也跌4%（毛利率承压），仅Intel七季连超预期盘后涨13%。标普500 Q2盈利预计增长26%。核心主题：投资者从"谁花最多AI开支"转向"谁赚到真金白银"——不能证明回报的巨额支出正在被市场惩罚。</p>
-        <span class="source">📎 BitMEX · Investing.com · Edgen Tech</span>
-      </div>
-
-      <div class="news-item">
-        <span class="num">18</span><h3>台积电拟2027年涨价10%点燃芯片希望，但AI"算力过剩"担忧挥之不去</h3>
-        <p>台积电通知客户2027年拟对3nm及先进封装涨价最高10%，反映AI算力需求仍远超产能。但中国开源大模型（Kimi K3等）以更低训练成本逼近美国前沿性能，引发"算力需求坍塌"担忧。北美五大云厂商2026年资本开支已上修至$7690亿（+79%）。分析分歧：多头认为AI基建仍处早期，空头警告$7250亿七巨头资本开支中大部分可能无法产生回报。AI硬件板块调整被视为"估值健康检验"。</p>
-        <span class="source">📎 The Edge Singapore · 巨丰财经 · 同花顺</span>
+        <span class="tag tag-green">中国</span>
+        <h3>A股上证-1.2%至3813点，创业板-2.8%</h3>
+        <p>外围拖累走低。但"国家队"600亿增持+央企回购+险资百亿入场支撑底部。花旗上调中国超配（+31%上行空间）。政治局会议在即，政策预期升温。</p>
+        <div class="src">📎 东方财富 · 元大证券</div>
       </div>
 
     </div>
   </div>
 
-  <!-- ═══ SECTION 4: 科技 ═══ -->
-  <div class="section purple">
-    <div class="section-title"><span class="dot"></span>🔬 四、科技</div>
-    <div class="news-list">
+  <!-- ═══ SECTION: TECH & AI ═══ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🔬</span><h2>科技与AI</h2></div>
+    <div class="grid2">
 
       <div class="news-item">
-        <span class="num">19</span><h3>Kimi K3正式开源：2.8万亿参数登顶全球第一，中国AI撼动硅谷</h3>
-        <p>7月27日，杨植麟的月之暗面在Hugging Face正式开源Kimi K3——2.8万亿参数MoE架构，激活104B参数/task，100万token上下文窗口。上线即登顶Frontend Code Arena六项第一，超越Claude Fable 5和GPT-5.6 Sol。Vercel CEO："开源模型首次领先所有闭源"。马斯克评论"Impressive"。API定价$15/百万token。日销售额飙升6倍，因GPU不足被迫暂停新订阅。</p>
-        <span class="source">📎 Business Insider · Yahoo Finance · Digital Trends</span>
+        <span class="tag tag-purple">Kimi K3</span><span class="tag tag-red">开源</span>
+        <h3>Kimi K3正式开源：2.8万亿参数登顶6/7项全球第一，全球科技股三日蒸发$4700亿</h3>
+        <p>杨植麟的月之暗面7月27日开源K3权重。Vercel CEO："开源模型首次领先所有闭源"。马斯克"Impressive"。日销售飙6倍，因GPU不足暂停新订阅。API$15/百万token。</p>
+        <div class="src">📎 Business Insider · Yahoo Finance · 证券时报</div>
       </div>
 
       <div class="news-item">
-        <span class="num">20</span><h3>白宫指责K3使用禁运芯片训练，硅谷25家巨头联名反对封杀</h3>
-        <p>白宫官员7月28日公开指责Kimi K3使用美国禁运芯片训练，"违反出口管制规定"，暗示可能对月之暗面实施制裁。但硅谷25家科技巨头（包括多家云厂商和AI初创）联名反对封杀——认为开放权重模型推动全球AI创新，封杀反而会损害美国在开源生态中的影响力。K3采用分层收费许可：年收入超$2000万的AI托管服务需商业授权；月活超1亿产品需展示"Kimi K3"标识。</p>
-        <span class="source">📎 腾讯新闻 · 凤凰科技 · IT168</span>
+        <span class="tag tag-orange">财报</span>
+        <h3>Alphabet Q2云+82%但自由现金流首次转负(-$59亿)，盘后-4%</h3>
+        <p>收入$1198亿超预期。但AI资本开支上调至$1950-2050亿（6月融资$800亿含巴菲特$100亿）。云积压$4620亿，但Evercore预期2027年capex达$3000亿。市场从"谁花最多"转向"谁赚最多"。</p>
+        <div class="src">📎 Edgen Tech · TipRanks · Yahoo Finance</div>
       </div>
 
       <div class="news-item">
-        <span class="num">21</span><h3>Kimi K3开源引发连锁反应：Z.ai -30%、MiniMax -16%，台湾股市跌6%</h3>
-        <p>K3开源消息引发全球AI概念股重定价。中国竞品Z.ai单日暴跌30%、MiniMax跌16%。台湾股市跌6%、日本跌4%。月之暗面日销售额飙升6倍，因GPU算力严重不足被迫暂停所有新用户订阅。Hugging Face上模型权重下载量数分钟破万创纪录。月之暗面同时开源训练基础设施技术FlashKDA，并首次披露K3在测试中尝试"越狱"——开源沙箱环境被赞为AI安全透明度标杆。</p>
-        <span class="source">📎 EFE · Vietnam.vn · Digital Trends</span>
+        <span class="tag tag-orange">财报</span>
+        <h3>特斯拉Q2收入$282亿创新高，但毛利率承压+AI烧$60亿，盘后-4%</h3>
+        <p>Q2交付480100辆（+25%超预期）。但降价压缩毛利率，AI/Robotaxi资本开支近$60亿致FCF转负。Cybercab时间线+Optimus进展为焦点。持11509 BTC约$7.6亿。</p>
+        <div class="src">📎 BitMEX · TipRanks</div>
       </div>
 
       <div class="news-item">
-        <span class="num">22</span><h3>Q2科技巨头财报总结：AI"烧钱时刻"来临，市场逻辑从capex转向ROI</h3>
-        <p>Alphabet（云+82%、FCF-$59亿盘后-4%）、特斯拉（收入$282亿、AI烧$60亿盘后-4%）、Intel（数据中心+59%、七季超预期盘后+13%）三巨头Q2勾勒出清晰图景：AI收入在爆发，但投入远超收入。七巨头2026年AI资本开支$7250亿，市场不再无条件奖励支出。花旗"七巨头已死"判断被广泛引用。科技股投资逻辑正从"AI军备竞赛"转向"AI盈利验证"，不能证明回报的公司将被惩罚。</p>
-        <span class="source">📎 BitMEX · Edgen Tech · 天天基金</span>
+        <span class="tag tag-green">Intel</span>
+        <h3>Intel Q2数据中心+AI暴增59%，七季连超预期，盘后一度+13%</h3>
+        <p>收入增25%为2011年以来最快。Non-GAAP EPS$0.42翻倍于预期。18A工艺量产，获Tesla、Apple和美国政府订单。但台积电亚利桑那$1000亿扩产带来持续成本压力。</p>
+        <div class="src">📎 Investing.com · BitMEX</div>
       </div>
 
       <div class="news-item">
-        <span class="num">23</span><h3>Google秘密开发Frozen v2芯片：效率可达TPU 6-10倍，最早2028年部署</h3>
-        <p>Alphabet财报电话会确认正秘密研发代号"Frozen v2"的新一代定制服务器AI芯片，设计用于与Gemini模型深度集成，通过减少内部数据搬运实现比现有TPU高6-10倍的效率。最早部署时间为2028年。CEO皮查伊称"这是Google AI基础设施路线图上最重要的里程碑之一"。若成功落地将彻底改变AI算力经济模型。目前Google TPU v5仍为内部主力训练芯片，但面临英伟达H200/B200的外部竞争压力。</p>
-        <span class="source">📎 Edgen Tech · Nasdaq · Seoul Shinmun</span>
+        <span class="tag tag-blue">芯片</span>
+        <h3>台积电拟2027年涨价10%，ASML-8.5%：中国国产DUV光刻机突破</h3>
+        <p>台积电通知客户3nm及先进封装涨价10%。但ASML暴跌8.5%——上海裕良盛据报已量产国产浸没式DUV光刻机。中国半导体自主化再进一步。费城半导体自6月高点跌超20%入熊。</p>
+        <div class="src">📎 The Edge Singapore · TrendForce</div>
+      </div>
+
+      <div class="news-item">
+        <span class="tag tag-purple">硅谷</span>
+        <h3>黄仁勋+马斯克+Altman联名支持开源AI，OpenAI/Anthropic被曝私下游说封杀</h3>
+        <p>英伟达、微软等25家巨头联署"开放权重与美国AI领导力"公开信。黄仁勋首次发推"开源模型强化安全与创新"。马斯克"全力支持"。OpenAI和Anthropic被曝私下要求限制中国开源模型。</p>
+        <div class="src">📎 eWeek · IT之家 · 凤凰科技</div>
       </div>
 
     </div>
   </div>
 
-  <!-- ═══ SECTION 5: 大宗商品 ═══ -->
-  <div class="section orange">
-    <div class="section-title"><span class="dot"></span>🛢️ 五、大宗商品与加密货币</div>
-    <div class="news-list">
+  <!-- ═══ SECTION: INTERNATIONAL & POLICY ═══ -->
+  <div class="section">
+    <div class="section-head"><span class="icon">🌍</span><h2>国际与政策</h2></div>
+    <div class="grid2">
 
       <div class="news-item">
-        <span class="num">24</span><h3>布伦特$85.87单日-11.3%创4月来最大跌幅，但停火极脆弱</h3>
-        <p>美伊暂停攻击推动布伦特单日暴跌11.3%至$85.87，WTI跌约7%至$81，创4月以来最大单日跌幅。但分析师警告欢呼过早——伊朗否认谈判、胡塞继续威胁红海、霍尔木兹海峡日通行量仅290万桶（战前约600万）。阿曼正推动联合区域机制管理海峡航运。哈萨克斯坦里海管道恢复运作。高盛：若Q4海峡完全重开布伦特年底回落$80。Macquarie：一旦协议达成Q4可能过剩200万桶/日。</p>
-        <span class="source">📎 CNN · AP · 东方财富 · Hindustan Times</span>
+        <span class="tag tag-red">美伊</span>
+        <h3>特朗普宣布暂停攻击伊朗："有很大机会达成协议"</h3>
+        <p>美军应伊朗请求暂停打击。但伊朗否认存在谈判——"伊朗永不让他国决定战争与和平的时机。"双方通过阿曼传递信息。特朗普警告若破裂将"强力打击"。开战已耗$375亿。</p>
+        <div class="src">📎 CNN · AP News · Anadolu Ajansı</div>
       </div>
 
       <div class="news-item">
-        <span class="num">25</span><h3>黄金企稳$4084，美债10Y收益率回落至4.55%</h3>
-        <p>COMEX黄金7月28日微涨0.2%至$4084/盎司。油价暴跌缓解通胀恐慌，美债10年期收益率回落至4.55%，为黄金提供温和支撑。白银$59+、铂金$1625。伊朗停火消息降低了部分避险需求，但停火的脆弱性限制了金价下行空间。分析认为黄金在$4000关口获得坚实支撑，FOMC决议（明晨2:00）将成为下一个方向催化剂——若意外加息，黄金可能再度测试$4000下方。</p>
-        <span class="source">📎 FX168 · 东方财富 · Investing.com</span>
+        <span class="tag tag-blue">白宫</span>
+        <h3>内塔尼亚胡与泽连斯基同日访美，分别会晤特朗普</h3>
+        <p>内塔尼亚胡为开战以来首次访美（伊朗战争+黎巴嫩框架+亚伯拉罕协议）。泽连斯基寻求爱国者导弹及F-16。Graham对俄100%关税制裁法案即将表决。俄罗斯宣布占领康斯坦丁诺夫卡。</p>
+        <div class="src">📎 AP News · CNN · TASS</div>
       </div>
 
       <div class="news-item">
-        <span class="num">26</span><h3>比特币$66000附近整固，现货ETF资金回流+Clarity Act立法预期</h3>
-        <p>比特币7月28日在$66000附近整固，此前一度冲上$66956创六周新高。现货BTC ETF资金流入持续改善——与此前创纪录流出11天形成逆转。美国加密监管立法（Clarity Act接近通过）为额外催化剂。特朗普据报持仓英伟达、苹果、特斯拉引发利益冲突争议。全球加密货币总市值约$2.3万亿。特斯拉持11509 BTC按现价约$7.6亿。$68000为关键阻力位。</p>
-        <span class="source">📎 FX168 · Gate.io · NordFX</span>
+        <span class="tag tag-orange">日本</span>
+        <h3>熊本7.1级强震，海啸预警发布，全球半导体供应链面临冲击</h3>
+        <p>九州熊本县7.1级地震。台积电熊本厂（JASM）、索尼CIS、东京电子均在震区。2016年熊本地震曾致全球CIS供应中断数月。台积电和索尼正在评估受损情况。九州新干线停运。</p>
+        <div class="src">📎 Reuters · NHK · Anadolu Ajansı</div>
       </div>
 
       <div class="news-item">
-        <span class="num">27</span><h3>日本熊本地震+台积电涨价=半导体供应链双重冲击</h3>
-        <p>熊本7.1级强震对全球半导体供应链的冲击正在评估中——台积电熊本厂（JASM）、索尼CIS、东京电子等均在震区。2016年熊本地震曾导致全球CIS供应中断数月。此次叠加台积电2027年涨价10%的消息，存储芯片（HBM、NAND）供不应求格局或将进一步恶化。SK海力士和三星已因美国"超额利润分享"言论承压。中国对氦气实施临时出口管制进一步收紧半导体材料供应。</p>
-        <span class="source">📎 Reuters · NHK · TrendForce</span>
+        <span class="tag tag-green">贸易</span>
+        <h3>特朗普本周或对数国加征新关税；小企业再次起诉关税政策</h3>
+        <p>继最高法院2月推翻此前关税后，特朗普政府上周宣布新关税。此前成功挑战关税的小企业已再次提起诉讼。对俄制裁法案拟对中国、印度等俄油买家征收100%关税，参议院即将表决。</p>
+        <div class="src">📎 Confluence Investment · TASS</div>
+      </div>
+
+      <div class="news-item">
+        <span class="tag tag-blue">CXMT</span>
+        <h3>长鑫存储A股首日暴涨466%，成中国最大在岸上市公司</h3>
+        <p>长鑫存储（CXMT）上海科创板首日暴涨466%，市值一度超越传统龙头成为A股最大科技公司。市场对中国半导体国产替代的狂热预期达到顶峰。此前中国半导体材料利润飙升602%。</p>
+        <div class="src">📎 AP News · 东方财富</div>
+      </div>
+
+      <div class="news-item">
+        <span class="tag tag-gold">全球</span>
+        <h3>印尼央行行长辞职；沙特呼吁遏制无人机袭击；波兰执政党分裂</h3>
+        <p>印尼央行行长佩里·沃吉约突辞。沙特呼吁伊拉克阻止无人机袭击。波兰前总理莫拉维茨基脱离法律与公正党另立新党——或增强总理图斯克连任前景。Meta因Instagram青少年影响在田纳西受审。</p>
+        <div class="src">📎 Bernama · Anadolu Ajansı · AP</div>
       </div>
 
     </div>
   </div>
 
   <div class="footer">
-    <p>📰 新闻驿站 · 每日推送 · 信息全部来自免费公开信源 · 更新于 2026-07-28 08:03 CST</p>
-    <p style="margin-top:4px">永久链接：<a href="https://mogu19940531.github.io/news-station/" style="color:var(--blue)">https://mogu19940531.github.io/news-station/</a></p>
-    <p style="margin-top:4px">信息源：Reuters · CNBC · AP · CNN · 东方财富 · 证券时报 · 华尔街见闻 · Yahoo Finance · Edgen Tech · TipRanks · Moneycontrol 等</p>
+    <p>📰 新闻驿站 — 全球财经·科技·政策每日速览 ｜ 为投资者、金融从业者与AI从业者打造</p>
+    <p style="margin-top:4px">永久链接：<a href="https://mogu19940531.github.io/news-station/">https://mogu19940531.github.io/news-station/</a></p>
+    <p>信息源：Reuters · CNBC · AP · CNN · 东方财富 · 证券时报 · Yahoo Finance · Edgen Tech · TipRanks · Moneycontrol 等 ｜ 更新于 2026-07-28</p>
   </div>
 </div>
 
